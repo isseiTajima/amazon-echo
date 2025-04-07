@@ -1,1 +1,3 @@
 # amazon-echo
+goのechoを使ってamazonのようなecのapiを作成します
+ormapperはgorm,diはを使用します
