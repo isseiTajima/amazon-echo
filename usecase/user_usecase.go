@@ -29,27 +29,3 @@ func (uc *UserUseCase) CreateUser(name, phoneNumber, gender string) (string, err
 	}
 	return user.UserId, nil
 }
-
-type ProductUseCase struct {
-	productRepo domain.ProductRepository
-}
-
-func NewProductUseCase(productRepo domain.ProductRepository) *ProductUseCase {
-	return &ProductUseCase{productRepo: productRepo}
-}
-
-func (uc *ProductUseCase) GetProducts() ([]domain.Product, error) {
-	return uc.productRepo.GetProducts()
-}
-
-type CartUseCase struct {
-	cartRepo domain.CartRepository
-}
-
-func NewCartUseCase(cartRepo domain.CartRepository) *CartUseCase {
-	return &CartUseCase{cartRepo: cartRepo}
-}
-
-func (uc *CartUseCase) AddToCart(cart *domain.Cart) error {
-	return uc.cartRepo.AddToCart(cart)
-}

@@ -32,11 +32,11 @@ func main() {
 	userUseCase := usecase.NewUserUseCase(userRepo)
 	userController := adapter.NewUserController(userUseCase)
 
-	productRepo := infrastructure.NewUserRepository(db) // Reusing UserRepository for simplicity
+	productRepo := infrastructure.NewProductRepository(db) // Reusing UserRepository for simplicity
 	productUseCase := usecase.NewProductUseCase(productRepo)
 	productController := adapter.NewProductController(productUseCase)
 
-	cartRepo := infrastructure.NewUserRepository(db) // Reusing UserRepository for simplicity
+	cartRepo := infrastructure.NewCartRepository(db) // Reusing UserRepository for simplicity
 	cartUseCase := usecase.NewCartUseCase(cartRepo)
 	cartController := adapter.NewCartController(cartUseCase)
 
